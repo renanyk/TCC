@@ -97,7 +97,7 @@ Matrícula
 
         
         require("../connect.php");
-        $result = mysqli_query($conn,"SELECT discipline.name,discipline.code,teacher.name as teacher_name,discipline.studant_count FROM discipline 
+        $result = mysqli_query($conn,"SELECT discipline.name,discipline.code,teacher.name as teacher_name,discipline.student_count FROM discipline 
 		JOIN teacher ON discipline.teacher_nusp = teacher.nusp");
        
         while($row = mysqli_fetch_array($result)){
@@ -107,7 +107,7 @@ Matrícula
         echo "<td>".$row["code"]."</td>";
 		
         echo "<td>".$row["teacher_name"]."</td>";
-        echo "<td>".$row["studant_count"]."</td>";
+        echo "<td>".$row["student_count"]."</td>";
         
         echo "<td>
 				<input type='submit' value ='Inserir' name='".$row["code"]."'>
@@ -171,10 +171,10 @@ Matrícula
 				
 		require("../connect.php");
         $result = mysqli_query($conn,"Select discipline.name,discipline.code,teacher.name as teacher_name,regist.state  from regist 
-	join studant on studant.regist_id = regist.id or studant.regist_id1 = regist.id
+	join student on student.regist_id = regist.id or student.regist_id1 = regist.id
 	join discipline on regist.discipline_code=discipline.code
     join teacher on teacher.nusp = discipline.teacher_nusp
-	where studant.login='$login'");
+	where student.login='$login'");
         
         while($row = mysqli_fetch_array($result)){
           

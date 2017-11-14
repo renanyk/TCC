@@ -53,7 +53,7 @@
                 $instituicao_de_origem = (isset($_POST['instituicao_de_origem'])&&!empty($_POST["instituicao_de_origem"]))? $_POST["instituicao_de_origem"] : invalidInput("Instituicao de origem");
                 $empresa_ou_instituicao_de_vinculo = (isset($_POST['empresa_ou_instituicao_de_vinculo'])&&!empty($_POST["empresa_ou_instituicao_de_vinculo"]))? $_POST["empresa_ou_instituicao_de_vinculo"] : invalidInput("empresa ou instituicao de vinculo");
                 $funcao_no_vinculo = (isset($_POST['funcao_no_vinculo'])&&!empty($_POST["funcao_no_vinculo"]))? $_POST["funcao_no_vinculo"] : invalidInput("Funcao no vinculo");
-                $result = mysqli_query($conn,"SELECT count(*) as count FROM `studant` WHERE `login` = '$login'");
+                $result = mysqli_query($conn,"SELECT count(*) as count FROM `student` WHERE `login` = '$login'");
                 
                 
                 $countbuff = $result->fetch_assoc();               
@@ -67,7 +67,7 @@
                     
                 }else{
                     $sql = mysqli_query($conn,"INSERT INTO 
-studant (login,password,name,rg,email,phone,address,city,state,postal_code,gender,nusp,course,institution,company,title,branch) 
+student (login,password,name,rg,email,phone,address,city,state,postal_code,gender,nusp,course,institution,company,title,branch) 
 VALUES('$login','$senha','$nome','$rg','$e_mail','$telefone','$endereco','$cidade','$estado','$cep','$sexo','$nusp','$curso_de_origem','$instituicao_de_origem','$empresa_ou_instituicao_de_vinculo','$funcao_no_vinculo','$ramo_atividade') "); 
                    if(mysqli_error($conn)){
                     echo '<script language="javascript">';

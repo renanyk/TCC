@@ -69,7 +69,7 @@ for row in rowInTable:
 			
 			nusp=cur.fetchone()
 			print(nusp[0])
-			query = 'insert into discipline(code,name,departiment,teacher_nusp) values("'+discipline+'","'+disciplineName+'","'+discipline[0]+discipline[1]+discipline[2]+'","'+str(nusp[0])+'")'
+			query = 'insert into discipline(code,name,department,teacher_nusp) values("'+discipline+'","'+disciplineName+'","'+discipline[0]+discipline[1]+discipline[2]+'","'+str(nusp[0])+'")'
 			print(query)
 			cur.execute(query)
 			
@@ -151,7 +151,7 @@ for row in rowInTable:
 			
 			nusp=cur.fetchone()
 			print(nusp[0])
-			query = 'insert into discipline(code,name,departiment,teacher_nusp) values("'+discipline+'","'+disciplineName+'","'+discipline[0]+discipline[1]+discipline[2]+'","'+str(nusp[0])+'")'
+			query = 'insert into discipline(code,name,department,teacher_nusp) values("'+discipline+'","'+disciplineName+'","'+discipline[0]+discipline[1]+discipline[2]+'","'+str(nusp[0])+'")'
 			print(query)
 			cur.execute(query)
 			
@@ -227,7 +227,7 @@ for row in rowInTable:
 			
 			nusp=cur.fetchone()
 			print(nusp[0])
-			query = 'insert into discipline(code,name,departiment,teacher_nusp) values("'+discipline+'","'+disciplineName+'","'+discipline[0]+discipline[1]+discipline[2]+'","'+str(nusp[0])+'")'
+			query = 'insert into discipline(code,name,department,teacher_nusp) values("'+discipline+'","'+disciplineName+'","'+discipline[0]+discipline[1]+discipline[2]+'","'+str(nusp[0])+'")'
 			print(query)
 			cur.execute(query)
 			

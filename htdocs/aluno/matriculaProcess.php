@@ -9,7 +9,7 @@ foreach($_POST as $code => $content) {
 		echo $code." ".$content;
 		
 	 	if($content=="Inserir"){
-			$result = mysqli_query($conn,"SELECT * FROM studant WHERE login = '$login'");
+			$result = mysqli_query($conn,"SELECT * FROM student WHERE login = '$login'");
 			$resultvector = $result->fetch_assoc();  
 			if($resultvector["regist_id"]==null){
 				
@@ -17,7 +17,7 @@ foreach($_POST as $code => $content) {
 				$query="insert into regist(state,date,discipline_code) values('pendente','$date','$code')";
 				mysqli_query($conn,$query);
 				$lastId = mysqli_insert_id($conn);
-				$query = "update studant set regist_id = '$lastId'  WHERE login = '$login'";
+				$query = "update student set regist_id = '$lastId'  WHERE login = '$login'";
 				mysqli_query($conn,$query);
 				echo '<script language="javascript">';
 				echo 'alert("disciplina adicionada");';
@@ -30,7 +30,7 @@ foreach($_POST as $code => $content) {
 				$query="insert into regist(state,date,discipline_code) values('pendente','$date','$code')";
 				mysqli_query($conn,$query);
 				$lastId = mysqli_insert_id($conn);
-				$query = "update studant set regist_id1 = '$lastId'  WHERE login = '$login'";
+				$query = "update student set regist_id1 = '$lastId'  WHERE login = '$login'";
 				mysqli_query($conn,$query);
 				echo '<script language="javascript">';
 				echo 'alert("disciplina adicionada");';
@@ -49,7 +49,7 @@ foreach($_POST as $code => $content) {
 			$result = mysqli_query($conn,$query);
 			$resultvector = $result->fetch_assoc();
 			$registID = $resultvector["id"];
-			$query = "update studant set regist_id = if(regist_id=$registID,NULL,regist_id), regist_id1 = if(regist_id1=$registID,NULL,regist_id1) WHERE login = '$login'";
+			$query = "update student set regist_id = if(regist_id=$registID,NULL,regist_id), regist_id1 = if(regist_id1=$registID,NULL,regist_id1) WHERE login = '$login'";
 			echo $query;
 			mysqli_query($conn,$query);
 			$query = "delete from regist where id=$registID";

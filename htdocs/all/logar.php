@@ -32,7 +32,7 @@ logar
         <div class="login">Logar como: </div>
     <select name="categoria" id="selectorUser" >
                  
-                    <option value="studant">Aluno</option>
+                    <option value="student">Aluno</option>
                     <option value="teacher">Professor</option>
                     <option value="graduacao">Funcionário da Graduação</option>
                     <option value="departamento">Funcionário do Departamento</option>

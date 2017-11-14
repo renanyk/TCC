@@ -53,9 +53,9 @@
 	 <?php  
 	   header('Content-Type: text/html; charset=iso-8859-1');
         require("../connect.php");
-        $result = mysqli_query($conn,"SELECT regist.date,discipline.code,discipline.name as discipline_name,studant.name as studant_name,studant.rg,studant.login,regist.state,regist.id FROM regist 
+        $result = mysqli_query($conn,"SELECT regist.date,discipline.code,discipline.name as discipline_name,student.name as student_name,student.rg,student.login,regist.state,regist.id FROM regist 
 		JOIN discipline ON discipline.code = regist.discipline_code
-		JOIN studant on studant.regist_id = regist.id or studant.regist_id1 = regist.id
+		JOIN student on student.regist_id = regist.id or student.regist_id1 = regist.id
 		where regist.state='graduacao'");
        
         while($row = mysqli_fetch_array($result)){
@@ -64,7 +64,7 @@
         echo "<td>".$row["date"]."</td>";
             echo "<td>".$row["discipline_name"]."";
 		echo "<br>[".$row["code"]."]</td>";
-        echo "<td>".$row["studant_name"]."</td>";
+        echo "<td>".$row["student_name"]."</td>";
 
         echo "<td>".$row["rg"]."</td>";
 					echo '<td>
